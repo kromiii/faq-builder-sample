@@ -46,11 +46,11 @@
 <body>
   <div class="container">
     <h1>よくある質問</h1>
-    {% for question, answer in faq_items.items() %}
+    {% for item in faq_items %}
     <div class="accordion">
-      <h2>{{ question }}</h2>
+      <h2>{{ item.question }}</h2>
       <div class="content">
-        <p>{{ answer }}</p>
+        <p>{{ item.answer }}</p>
       </div>
     </div>
     {% endfor %}
