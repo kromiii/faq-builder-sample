@@ -65,7 +65,6 @@ def extract_faq_with_openai(pdf_file):
         time.sleep(5)
     
     result = run.required_action.submit_tool_outputs.tool_calls[0].function.arguments
-    print("result:", result)
     result = json.loads(result)
 
     return result["faq_items"]
