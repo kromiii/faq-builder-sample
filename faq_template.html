@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQページ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .accordion {
+      background: #fff;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .accordion h2 {
+      margin: 0;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+
+    .content {
+      padding: 0 15px;
+      display: none;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>よくある質問</h1>
+    {% for question, answer in faq_items.items() %}
+    <div class="accordion">
+      <h2>{{ question }}</h2>
+      <div class="content">
+        <p>{{ answer }}</p>
+      </div>
+    </div>
+    {% endfor %}
+    <!-- 他の質問を追加 -->
+  </div>
+
+  <script>
+    const accordions = document.querySelectorAll('.accordion h2');
+
+    accordions.forEach(accordion => {
+      accordion.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const content = this.nextElementSibling;
+        if (content.style.display === 'block') {
+          content.style.display = 'none';
+        } else {
+          content.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
