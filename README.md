@@ -2,11 +2,11 @@
 
 サービスのマニュアルからFAQサイトを生成するツールです。
 
+デモサイト：https://faq-builder.streamlit.app/
+
 ## 使い方
 
-PDF形式のマニュアルをアップロードして、しばらく待ちます
-
-FAQ サイトが生成されます
+PDF形式のマニュアルをアップロードして５分ほど待つとFAQ サイトが生成されます
 
 ## Development 
 
@@ -17,7 +17,11 @@ FAQ サイトが生成されます
 Python 3.10.13
 ```
 
-必要なライブラリを適宜インストールしてください
+### Install dependencies
+
+```
+% pip install -r requirements.txt
+```
 
 ### Run local server
 
